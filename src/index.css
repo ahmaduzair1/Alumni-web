@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #008080;
+  --color-primary-light: #00bfb2;
+  --color-secondary: #daa520;
+  --color-gold: #daa520;
+  --color-dark-bg: #0d1117;
+  --color-dark-card: #161b22;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --brand-primary: #008080;
+  --brand-primary-light: #00bfb2;
+  --brand-gold: #daa520;
+  --bg: #ffffff;
+  --bg-elevated: #f5f5f5;
+  --card: #ffffff;
+  --text: #212121;
+  --text-muted: #757575;
+  --border: #e5e7eb;
+  --nav-bg: #ffffff;
+  --accent: #008080;
+}
+
+.dark {
+  --bg: #0d1117;
+  --bg-elevated: #161b22;
+  --card: #161b22;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.08);
+  --nav-bg: #0d1117;
+  --accent: #2f81f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-atmosphere {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.alumni-portal {
+  background: #ffffff;
+  color: var(--text);
+}
+
+.staff-portal {
+  --bg: #f7f9fc;
+  background: #f7f9fc;
+  color: var(--text);
+}
+
+.dark .alumni-portal,
+.dark .staff-portal {
+  --bg: #0d1117;
+  background: #0d1117;
+}
+
+.portal-main header {
+  position: static;
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0 0 1.25rem;
+}
+
+.portal-main header h1 {
+  text-align: left;
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #008080, #00bfb2);
+  color: white;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.dark .btn-primary {
+  background: #2f81f7;
+  box-shadow: 0 8px 20px rgba(47, 129, 247, 0.35);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 128, 128, 0.38);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
+  background: var(--bg-elevated);
+  color: var(--text);
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  outline: none;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.35);
+}
+
+.card-surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+}
